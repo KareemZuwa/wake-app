@@ -2,6 +2,8 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing';
+import AlarmPage from './components/AlarmPage'
+import SettingsPage from './components/SettingsPage'
 
 
 
@@ -22,6 +24,8 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/'><Landing /></Route>
+        <Route exact path='/Alarms'><AlarmPage/></Route>
+        <Route exact path='/Settings'><SettingsPage/></Route>
       </Switch>
   
     </div>

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/svg/Logo.svg';
 
 function Landing() {
     return (
         <section>
-            <h1>Hej och välkomna att börja koda</h1>
+            <h2>Welcome to</h2>
+
+            <img src={logo} alt='logotype' />
+
+            <Link to='/'>Set Alarm</Link>
 
             
         </section>

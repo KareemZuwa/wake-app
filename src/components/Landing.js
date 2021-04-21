@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/svg/Logo.svg';
+import welcome from '../assets/svg/Welcome.svg';
 
 function Landing() {
     return (
-        <section>
-            <h2>Welcome to</h2>
-
+        <section className='landing-wrapper'>
+            <img className='welcome'src={welcome} alt='welcome' />
             <img src={logo} alt='logotype' />
 
             <Link to='/'>Set Alarm</Link>

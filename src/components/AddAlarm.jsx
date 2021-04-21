@@ -1,5 +1,10 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import { makeStyles, Accordion,AccordionSummary, AccordionDetails, 
+    Typography, Icon, AppBar, Toolbar, IconButton } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MenuSharpIcon from '@material-ui/icons/MenuSharp';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,6 +21,20 @@ export default function AddAlarm() {
     return (
 
         <div className={classes.root}>
+            <header>
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <MenuSharpIcon />
+                    </IconButton>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <AddCircleIcon />
+                    </IconButton>
+                    
+                </Toolbar>
+            </AppBar>
+            
+            </header>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

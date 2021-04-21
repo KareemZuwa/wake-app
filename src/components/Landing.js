@@ -12,7 +12,7 @@ function Landing() {
 
 
         
-            <Link to='/'>
+            <Link to='/addalarm'>
             <Fab className='set-alarm-button' variant="contained" color="primary">Set Alarm</Fab>
             </Link>
 

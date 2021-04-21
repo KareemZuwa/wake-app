@@ -7,7 +7,7 @@ import Landing from './components/Landing';
 
 function App() {
   //# ALARM-SIDAN (ELISABETH)
-  //OFF-BTN-STATUS ÄR FALSE TILLS MAN KLICKAR, SNOOZE-BTN-STATUS ÄR FALSE TILLS MAN KLICKAR
+  //OFF-BTN-STATUS ÄR FALSE TILLS MAN KLICKAR, SNOOZE-BTN-STATUS ÄR FALSE TILLS MAN KLICKAR ....
   const [offbtn, setOffBtn] = useState(false);
   const [snoozebtn, setSnoozeBtn] = useState(false);
 

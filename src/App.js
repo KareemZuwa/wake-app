@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import AlarmPage from './components/AlarmPage'
 import SettingsPage from './components/SettingsPage'
-
+import AddAlarm from './components/AddAlarm';
 
 
 function App() {
@@ -23,7 +23,8 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path='/'><Landing /></Route>
+        <Route exact path='/' component={ Landing } ></Route>
+        <Route exact path ='/addalarm'><AddAlarm/></Route>
         <Route exact path='/Alarms'><AlarmPage/></Route>
         <Route exact path='/Settings'><SettingsPage/></Route>
       </Switch>

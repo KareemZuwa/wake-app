@@ -1,6 +1,6 @@
 const SnoozeBtn = () => {
     return ( 
-        <button onClick={snooze} className="snooze-btn"></button>
+        <button className="snooze-btn"></button>
      );
 }
  

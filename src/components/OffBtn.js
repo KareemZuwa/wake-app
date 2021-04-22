@@ -1,6 +1,6 @@
 const OffBtn = () => {
     return ( 
-        <button onClick={turnoff} className="off-btn"></button>
+        <button className="off-btn"></button>
      );
 }
  

@@ -1,5 +1,6 @@
 import OffBtn from "./OffBtn"
 import SnoozeBtn from "./SnoozeBtn"
+import Nav from "./Nav"
 
 const AlarmPage = () => {
     return ( 

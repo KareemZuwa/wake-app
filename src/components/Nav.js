@@ -3,7 +3,6 @@ import './Nav.css'
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Link} from 'react-router-dom'
-import MenuIcon from '@material-ui/icons/Menu';
 import {ReactComponent as CloseBtn} from '../assets/svg/CloseIcon.svg'
 import {ReactComponent as OpenMenu} from '../assets/svg/menuIcon.svg'
 

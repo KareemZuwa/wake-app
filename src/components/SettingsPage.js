@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import Nav from './Nav'
 
 class SettingsPage extends Component {
     constructor(props) {
@@ -6,8 +7,10 @@ class SettingsPage extends Component {
         this.state = {  }
     }
     render() { 
-        return ( 
+        return ( <>
+            <Nav />
             <h1>hej</h1>
+            </>
          );
     }
 }

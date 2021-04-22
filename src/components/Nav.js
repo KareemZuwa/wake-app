@@ -3,7 +3,8 @@ import './Nav.css'
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Link} from 'react-router-dom'
-import MenuIcon from '@material-ui/icons/Menu';
+import {ReactComponent as CloseBtn} from '../assets/svg/CloseIcon.svg'
+import {ReactComponent as OpenMenu} from '../assets/svg/menuIcon.svg'
 
 
 export default function SimpleMenu() {
@@ -19,9 +20,9 @@ export default function SimpleMenu() {
 
   return (
     <div id="menu">
-      <MenuIcon aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <OpenMenu aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         
-      </MenuIcon>
+      </OpenMenu>
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -37,24 +38,32 @@ export default function SimpleMenu() {
             }
           }}
       >
-        <MenuItem onClick={handleClose}>
-            <Link 
-            to='#'
-            className="link"
-            >
-              Mina larm
-          </Link>
-        </MenuItem>
-        
-        
-        <MenuItem onClick={handleClose}>
-            <Link 
-            to='./SettingsPage.js'
-            className="link"
-            >
-                Inställningar
-            </Link>
-        </MenuItem>
+          <section className="wrapper">
+              <div className="closeBtn">
+                  <CloseBtn onClick={handleClose} />
+              </div>
+            <section className="menuItems">
+                <MenuItem onClick={handleClose}>
+                    <Link 
+                    to='#'
+                    className="link"
+                    >
+                    Mina larm
+                </Link>
+                </MenuItem>
+                
+                
+                <MenuItem onClick={handleClose}>
+                    <Link 
+                    to='./SettingsPage.js'
+                    className="link"
+                    >
+                        Inställningar
+                    </Link>
+                </MenuItem>
+            </section>
+            
+          </section>
       </Menu>
     </div>
   );

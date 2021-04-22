@@ -23,7 +23,3 @@
       border: 5px solid #FCB64E;
   }
 
-  .MuiSlider-thumb::after {
-    content: "off";
-    z-index: 9999;
-  }

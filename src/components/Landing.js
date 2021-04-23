@@ -9,7 +9,7 @@ function Landing() {
             <img className='welcome' src={welcome} alt='welcome' />
             <img className='logotype' src={logo} alt='logotype' />
 
-            <Link to='/'>Set alarm</Link>
+            <Link to='/addalarm'>Set alarm</Link>
         </section>
     )
 }

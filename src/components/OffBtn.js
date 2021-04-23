@@ -1,11 +1,7 @@
 
 import './AlarmPage.css';
-import PropTypes from 'prop-types';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
-import Typography from '@material-ui/core/Typography';
-import Tooltip from '@material-ui/core/Tooltip';
-import { useState } from 'react';
 
 
 const OffBtn = (props) => {
@@ -60,8 +56,8 @@ const OffBtn = (props) => {
           },
       })(Slider);
    
+      //NÄR OFFBTN-STATUSEN ÄR FALSE RENDERAS FÖLJANDE SLIDE-KNAPPS-PLUPP UT
       function AirbnbThumbComponent(props) {
-          console.log(offBtnState);
         if (!offBtnState){
             return (
             <span {...props}>
@@ -69,12 +65,11 @@ const OffBtn = (props) => {
             </span>
             );
         } else {
-            return (
-                <h1>Alarm is off</h1>
-                );
+            return ('');
         }
       }
       
+      //NÄR SLIDEKNAPPEN ÄR DRAGEN HELA VÄGEN TILL HÖGER ÄNDRAS OFFBTN-STATUSEN TILL TRUE
       function slideEvent(e) {
           let newValue = e.target.parentElement.children[2].value;
         if (newValue >= 100) {
@@ -82,7 +77,7 @@ const OffBtn = (props) => {
         } 
       }
         const classes = useStyles();
-        console.log(offBtnState);
+        //NÄR OFFBTN-STATUSEN ÄR FALSE, DVS INTE KLICKAD, RENDERAS FÖLJANDE UT
         if (!offBtnState){
             return (
                 <div className={classes.root}>  
@@ -93,6 +88,7 @@ const OffBtn = (props) => {
                 </div>
               );
         } else {
+        //NÄR OFFBTN-STATUSEN ÄR TRUE, DVS KLICKAD, RENDERAS FÖLJANDE UT
             return (
                 <h1 className="alarm-off-h1">Alarm off</h1>
                 );

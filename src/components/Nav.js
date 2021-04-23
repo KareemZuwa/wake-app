@@ -62,6 +62,14 @@ export default function SimpleMenu() {
                         Inställningar
                     </Link>
                 </MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <Link 
+                    to='/Alarms'
+                    className="link"
+                    >
+                        Alarm
+                    </Link>
+                </MenuItem>
             </section>
           </section>
       </Menu>

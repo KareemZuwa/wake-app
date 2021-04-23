@@ -2,12 +2,13 @@
 import './AlarmPage.css';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
+import { Link } from 'react-router-dom';
 
+import exit from '../assets/svg/CloseIcon.svg'
 
 const OffBtn = (props) => {
-    const setOffBtn= props.setOffBtn
-    const offBtnState = props.offbtn
-    console.log(offBtnState);
+    const setOffBtn= props.setOffBtn;
+    const offBtnState = props.offbtn;
     const useStyles = makeStyles((theme) => ({
         root: {
           width: 300 + theme.spacing(3) * 2,
@@ -72,8 +73,11 @@ const OffBtn = (props) => {
       //NÄR SLIDEKNAPPEN ÄR DRAGEN HELA VÄGEN TILL HÖGER ÄNDRAS OFFBTN-STATUSEN TILL TRUE
       function slideEvent(e) {
           let newValue = e.target.parentElement.children[2].value;
+          
         if (newValue >= 100) {
             setOffBtn(true)
+            let sectionClass = e.currentTarget.children[0].children[1].children[1].children[0].children[0]
+            sectionClass.className = 'alarm-section'
         } 
       }
         const classes = useStyles();
@@ -90,7 +94,10 @@ const OffBtn = (props) => {
         } else {
         //NÄR OFFBTN-STATUSEN ÄR TRUE, DVS KLICKAD, RENDERAS FÖLJANDE UT
             return (
+              <>
                 <h1 className="alarm-off-h1">Alarm off</h1>
+                <Link to='/Settings' ><img className="exit" src={exit} alt="exit" /></Link>
+              </>
                 );
         }
 }

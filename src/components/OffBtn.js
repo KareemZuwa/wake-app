@@ -56,7 +56,7 @@ const OffBtn = (props) => {
           },
       })(Slider);
    
-      //NÄR OFFBTN-STATUSEN ÄR FALSE RENDERAS FÖLJANDE SLIDE-KNAPPS-PLUPP UT
+      //NÄR OFFBTN-STATUSEN ÄR FALSE RENDERAS FÖLJANDE SLIDE-KNAPP UT
       function AirbnbThumbComponent(props) {
         if (!offBtnState){
             return (

@@ -13,8 +13,6 @@ function App() {
   //OFF-BTN-STATUS ÄR FALSE TILLS MAN KLICKAR, SNOOZE-BTN-STATUS ÄR FALSE TILLS MAN KLICKAR ....
   const [offbtn, setOffBtn] = useState(false);
   const [snoozebtn, setSnoozeBtn] = useState(false);
-  //SÄTTA PÅ/STÄNGA AV COLORANIMATION FÖR EPILEPTIKER
-  const [coloranimation, setColorAnimation] = useState(true);
 
   //SIDA #4, SET-ALARM PAGE (NOORA)
   //BESTÄMMER TID FÖR ALARM, BESTÄMMER VAL AV LJUD FÖR ALARM, BESTÄMMER OM SNOOZE SKA FINNAS OCH VILKEN TIDSINTERVALL
@@ -30,7 +28,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={ Landing } ></Route>
         <Route exact path ='/addalarm'><AddAlarm/></Route>
-        <Route exact path='/Alarms'><AlarmPage coloranimation={coloranimation} alarmtime={alarmtime} snoozetime={snoozetime} offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
+        <Route exact path='/Alarms'><AlarmPage alarmtime={alarmtime} snoozetime={snoozetime} offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
         <Route exact path='/Settings'><SettingsPage/></Route>
         <Route exact path='/Nav'><Nav/></Route>
       </Switch>

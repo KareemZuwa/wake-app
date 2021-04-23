@@ -25,7 +25,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={ Landing } ></Route>
         <Route exact path ='/addalarm'><AddAlarm/></Route>
-        <Route exact path='/Alarms'><AlarmPage/></Route>
+        <Route exact path='/Alarms'><AlarmPage offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
         <Route exact path='/Settings'><SettingsPage/></Route>
       </Switch>
   

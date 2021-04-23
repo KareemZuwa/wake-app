@@ -21,5 +21,35 @@
       font-size: 35px;
       background-color: #FCB64E;
       border: 5px solid #FCB64E;
+      transition: all .2s ease-in-out;
   }
 
+  .snooze-btn:active {
+    transform: scale(.9);
+    background-color: #f7d959;
+    border: 5px solid #fff;
+  }
+
+  .snooze-btn:focus {
+      outline: none;
+  }
+  
+  
+.alarm-img {
+    margin-bottom: 50px;
+}
+
+.alarm-img-off {
+    margin-top: 30px;
+    transform: rotate(180deg);
+    transition: all 1s ease-in-out;
+}
+
+.alarm-off-h1 {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: #FCB64E;
+}

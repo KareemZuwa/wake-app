@@ -10,11 +10,11 @@ import {ReactComponent as OpenMenu} from '../assets/svg/menuIcon.svg'
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
+  const handleClick = (event) => { //hanterar öppning av menyn
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = () => { //hanterar stängning av menyn
     setAnchorEl(null);
   };
 
@@ -30,11 +30,14 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
         PaperProps={{
-            style: {
+            style: { //styling av material ui via paperprops
               background: `linear-gradient(to bottom right, #FCB64E, white)`,
-              width: `375px`,
+              minWidth: `100vw`,
               display: `flex`,
-              height: `812px`
+              minHeight: `100vh`,
+              position: `initial`,
+              top: 0,
+              left: 0
             }
           }}
       >
@@ -45,24 +48,21 @@ export default function SimpleMenu() {
             <section className="menuItems">
                 <MenuItem onClick={handleClose}>
                     <Link 
-                    to='#'
+                    to='/addalarm'
                     className="link"
                     >
                     Mina larm
                 </Link>
                 </MenuItem>
-                
-                
                 <MenuItem onClick={handleClose}>
                     <Link 
-                    to='./SettingsPage.js'
+                    to='/Settings'
                     className="link"
                     >
                         Inställningar
                     </Link>
                 </MenuItem>
             </section>
-            
           </section>
       </Menu>
     </div>

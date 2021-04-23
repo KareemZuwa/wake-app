@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import AlarmPage from './components/AlarmPage'
 import SettingsPage from './components/SettingsPage'
 import AddAlarm from './components/AddAlarm';
+import Nav from './components/Nav'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route exact path ='/addalarm'><AddAlarm/></Route>
         <Route exact path='/Alarms'><AlarmPage offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
         <Route exact path='/Settings'><SettingsPage/></Route>
+        <Route exact path='/Nav'><Nav/></Route>
       </Switch>
   
     </div>

@@ -5,6 +5,7 @@ import { makeStyles, Accordion,AccordionSummary, AccordionDetails,
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import Nav from './Nav'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,7 +26,7 @@ export default function AddAlarm() {
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuSharpIcon />
+                        <Nav />
                     </IconButton>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <AddCircleIcon />

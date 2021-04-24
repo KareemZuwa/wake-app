@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import AlarmPage from './components/AlarmPage'
 import SettingsPage from './components/SettingsPage'
 import AddAlarm from './components/AddAlarm';
+import SetAlarm from './components/SetAlarm';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={ Landing } ></Route>
         <Route exact path ='/addalarm'><AddAlarm/></Route>
+        <Route exact path ='/SetAlarm'><SetAlarm/></Route>
         <Route exact path='/Alarms'><AlarmPage/></Route>
         <Route exact path='/Settings'><SettingsPage/></Route>
       </Switch>

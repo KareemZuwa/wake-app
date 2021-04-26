@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import AlarmPage from './components/AlarmPage'
-import SettingsPage from './components/SettingsPage'
 import AddAlarm from './components/AddAlarm';
 import SetAlarm from './components/SetAlarm';
 
@@ -36,7 +35,6 @@ function App() {
         <Route exact path='/Alarms'><AlarmPage alarmtime={alarmtime} snoozetime={snoozetime} offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
 
         <Route exact path='/Alarms'><AlarmPage alarmtime={alarmtime} snoozetime={snoozetime} offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
-        <Route exact path='/Settings'><SettingsPage/></Route>
         <Route exact path='/Nav'><Nav/></Route>
       </Switch>
   

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import Nav from './Nav'
 import { makeStyles, AppBar, Toolbar, IconButton, Container, Card, CardContent } from '@material-ui/core';
 import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
@@ -93,7 +94,7 @@ export default function SettAlarm({ allAlarms }) {
                     <AppBar position="static" color="transparent" elevation={0}>
                         <Toolbar>
                             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                                <MenuSharpIcon className={classes.svg_icons}/>
+                                < Nav/>
                             </IconButton>
                             <IconButton edge="start" className={classes.rightToolbar} color="inherit" aria-label="circle">
                                 <AddCircleIcon className={classes.svg_icons}/>

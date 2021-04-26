@@ -1,86 +1,70 @@
 import React from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import './Nav.css'
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import {Link} from 'react-router-dom'
+import {ReactComponent as CloseBtn} from '../assets/svg/CloseIcon.svg'
+import {ReactComponent as OpenMenu} from '../assets/svg/menuIcon.svg'
 
-const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-});
 
-export default function SwipeableTemporaryDrawer() {
-  const classes = useStyles();
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+export default function SimpleMenu() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
+  const handleClick = (event) => { //hanterar öppning av menyn
+    setAnchorEl(event.currentTarget);
   };
 
-  const list = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-      })}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
+  const handleClose = () => { //hanterar stängning av menyn
+    setAnchorEl(null);
+  };
 
   return (
-    <div>
-      {['left', 'right', 'top', 'bottom'].map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <SwipeableDrawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
-          >
-            {list(anchor)}
-          </SwipeableDrawer>
-        </React.Fragment>
-      ))}
+    <div id="menu">
+      <OpenMenu aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        
+      </OpenMenu>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        PaperProps={{
+            style: { //styling av material ui via paperprops
+              background: `linear-gradient(to bottom right, #FCB64E, white)`,
+              minWidth: `100vw`,
+              display: `flex`,
+              minHeight: `100vh`,
+              position: `initial`,
+              top: 0,
+              left: 0
+            }
+          }}
+      >
+          <section className="wrapper">
+              <div className="closeBtn">
+                  <CloseBtn onClick={handleClose} />
+              </div>
+            <section className="menuItems">
+                <MenuItem onClick={handleClose}>
+                    <Link 
+                    to='/addalarm'
+                    className="link"
+                    >
+                    Mina larm
+                </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <Link 
+                    to='/Settings'
+                    className="link"
+                    >
+                        Inställningar
+                    </Link>
+                </MenuItem>
+            </section>
+          </section>
+      </Menu>
     </div>
   );
 }

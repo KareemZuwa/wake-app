@@ -25,7 +25,7 @@ const AlarmPage = (props) => {
             <img className="logo" src={logo} alt="logotype" />
             <img className="alarm-img" src={alarmimg} alt="alarm clock"/>
             <OffBtn offbtn={props.offbtn} setOffBtn={props.setOffBtn} />
-            <SnoozeBtn snoozebtn={props.snoozebtn} setSnoozeBtn={props.setSnoozeBtn} />
+            <SnoozeBtn offbtn={props.offbtn} snoozebtn={props.snoozebtn} setSnoozeBtn={props.setSnoozeBtn} />
         </section>
      );
      //NÄR OFFBTN ÄR KLICKAD RENDERAS FÖLJANDE UT 
@@ -35,7 +35,7 @@ const AlarmPage = (props) => {
                 <img className="logo" src={logo} alt="logotype" />
                 <img className="alarm-img-off" src={alarmimg} alt="alarm clock"/>
                 <OffBtn offbtn={props.offbtn} setOffBtn={props.setOffBtn} />
-                <SnoozeBtn snoozebtn={props.snoozebtn} setSnoozeBtn={props.setSnoozeBtn} alarmtime={alarmtime} snoozetime={snoozetime} />
+                <SnoozeBtn offbtn={props.offbtn} snoozebtn={props.snoozebtn} setSnoozeBtn={props.setSnoozeBtn} alarmtime={alarmtime} snoozetime={snoozetime} />
             </section>
          );
      }

@@ -25,15 +25,15 @@ function App() {
   const [alarmsound, setAlarmSound] = useState('');
   const [snoozetime, setSnoozeTime] = useState(5);
 
-  const [alarms, setAlarms] = useState({})
+  const [storeAlarms, setStoreAlarms] = useState([{}]);
 
 
   return (
     <div className="App">
       <Switch>
         <Route exact path='/' component={ Landing } ></Route>
-        <Route exact path ='/addalarm' alarms={alarms} setAlarm={setAlarms}><AddAlarm/></Route>
-        <Route exact path ='/SetAlarm'><SetAlarm/></Route>
+        <Route exact path ='/addalarm' render={ (props) => <AddAlarm allAlarms={storeAlarms} setAlarmAdder={setStoreAlarms} {...props} />} ></Route>
+        <Route exact path ='/SetAlarm' render={(props) => <SetAlarm allAlarms={storeAlarms}  {...props}/>}></Route>
         <Route exact path='/Alarms'><AlarmPage/></Route>
 
         <Route exact path='/Alarms'><AlarmPage coloranimation={coloranimation} alarmtime={alarmtime} snoozetime={snoozetime} offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>

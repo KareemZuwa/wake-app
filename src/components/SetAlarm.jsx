@@ -1,8 +1,18 @@
 import React, { useRef, useEffect } from "react";
-import { makeStyles, AppBar, Toolbar, IconButton, Container } from '@material-ui/core';
+import { makeStyles, AppBar, Toolbar, IconButton, Container, Card, CardContent } from '@material-ui/core';
 import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import alarmIcon from '../assets/svg/alarm-icon.svg'
 
+import ClassicAlarm from '../assets/sounds/ClassicAlarm.mp3'
+import CuteAlarm from '../assets/sounds/CuteAlarm.mp3'
+import ElevatedAlarm from '../assets/sounds/ElevatedAlarm.mp3'
+import ExtremeAlarm from '../assets/sounds/ExtremeAlarm.mp3'
+import NatureAlarm from '../assets/sounds/NatureAlarm.mp3'
+import WakeUp from '../assets/sounds/WakeUp.mp3'
+import { Link } from 'react-router-dom';
+
+import useSound from 'use-sound';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,12 +34,21 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-export default function SettAlarm() {
+export default function SettAlarm({ allAlarms }) {
     const classes = useStyles();
+
+    const [classicAlarmSound] = useSound(ClassicAlarm, { volume: 0.25})
+    const [cuteAlarmSound] = useSound(CuteAlarm, { volume: 0.25})
+    const [elevatedAlarmSound] = useSound(ElevatedAlarm, { volume: 0.25})
+    const [extremeAlarmSound] = useSound(ExtremeAlarm, { volume: 0.25})
+    const [natureAlarmSound] = useSound(NatureAlarm, { volume: 0.25})
+    const [wakeupAlarmSound] = useSound(WakeUp, { volume: 0.25})
 
     const hourHand = useRef(null);
     const minuteHand = useRef(null);
     const secondHand = useRef(null);
+
+    console.log(allAlarms)
 
     useEffect(() => {
 
@@ -83,11 +102,35 @@ export default function SettAlarm() {
                     </AppBar>
                 
                 </header>   
-                <div style={{ display: 'flex', justifyContent:"center", marginTop:40}}>
-                    <div class="clock">
-                        <div className="hand minute" ref={minuteHand}></div>
-                        <div className="hand hour" ref={hourHand}></div>
-                        <div className="hand second" ref={secondHand}></div>
+                <div style={{ padding: 20}}>
+                    <div style={{ display: 'flex', justifyContent:"center", marginTop:40}}>
+                        <div className="clock">
+                            <div className="hand minute" ref={minuteHand}></div>
+                            <div className="hand hour" ref={hourHand}></div>
+                            <div className="hand second" ref={secondHand}></div>
+                        </div>
+                    </div>
+                    <div style={{ marginBottom: 20}}>
+                        {
+                            (allAlarms.length - 1) >= 1 && allAlarms.map( alarm => {
+                                <Card key={(Math.random()).toString()}>
+                                    <CardContent>
+                                        <div><img src={alarmIcon} alt="alarmIcon" /></div>
+                                    </CardContent>
+                                </Card>
+                            })
+                        }
+                        {
+                            (allAlarms.length - 1) === 0 && 
+                            <div>
+                                <div>
+                                    <h1>No alarms to display</h1>
+                                </div>
+                                <div>
+                                    Go <Link to="/addalarm">here</Link> to set alarm
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </Container>

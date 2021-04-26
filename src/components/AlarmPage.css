@@ -7,6 +7,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: background-color 1s linear .5s;
+  }
+
+  .alarm-section-transition {
+    background-color: #f7d959;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 5s linear 1s;
+  } 
+
+  .exit {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
   }
 
   .logo {

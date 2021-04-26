@@ -134,7 +134,7 @@ function SetAlarm({ allAlarms }) {
                                 <Card key={index} style={{ 
                                     backgroundImage:"linear-gradient(to right, orange , white)", margin: 20}}>
                                     <CardContent>
-                                        <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-evenly', height:35}}>
                                             <img src={alarmIcon} alt="alarmIcon" />
                                             <Switch
                                                 defaultChecked
@@ -142,7 +142,7 @@ function SetAlarm({ allAlarms }) {
                                                 inputProps={{ 'aria-label': 'checkbox with default color' }}
                                             />
                                         </div>
-                                        <div>{alarm.time}</div>
+                                        <div style ={{fontWeight:'bold' , fontSize: 30, display:'flex', justifyContent:'space-evenly'}}>{alarm.time}</div>
                                     </CardContent>
                                 </Card>
                             ))

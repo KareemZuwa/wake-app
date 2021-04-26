@@ -5,13 +5,12 @@ import welcome from '../assets/svg/Welcome.svg';
 
 function Landing() {
     return (
-        <section className='landing-wrapper'>
+        <div className='landing-wrapper'>
             <img className='welcome' src={welcome} alt='welcome' />
             <img className='logotype' src={logo} alt='logotype' />
 
             <Link to='/addalarm'>Set alarm</Link>
-        </section>
-        
+        </div>
     )
 }
 

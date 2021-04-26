@@ -48,18 +48,18 @@ export default function SimpleMenu() {
             <section className="menuItems">
                 <MenuItem onClick={handleClose}>
                     <Link 
-                    to='/addalarm'
+                    to='/setalarm'
                     className="link"
                     >
-                    Mina larm
+                    Set alarm
                 </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
                     <Link 
-                    to='/Settings'
+                    to='/addalarm'
                     className="link"
                     >
-                        Inställningar
+                        Add alarm
                     </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
@@ -67,7 +67,7 @@ export default function SimpleMenu() {
                     to='/Alarms'
                     className="link"
                     >
-                        Alarm
+                        Alarms
                     </Link>
                 </MenuItem>
             </section>

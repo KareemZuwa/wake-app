@@ -96,7 +96,7 @@ const OffBtn = (props) => {
             return (
               <>
                 <h1 className="alarm-off-h1">Alarm off</h1>
-                <Link to='/Settings' ><img className="exit" src={exit} alt="exit" /></Link>
+                <Link to='/SetAlarm' ><img className="exit" src={exit} alt="exit" /></Link>
               </>
                 );
         }

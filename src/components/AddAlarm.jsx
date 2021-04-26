@@ -4,7 +4,6 @@ import {
   makeStyles, Typography, AppBar, Toolbar, IconButton, Container, Link as MUiLink, TextField, 
   Select as MuiSelect, MenuItem, FormControlLabel, Checkbox
 } from '@material-ui/core';
-import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import AddIcon from '../assets/svg/alarm-icon.svg'
 

@@ -33,9 +33,6 @@ function App() {
 
         <Route exact path ='/addalarm' render={ props => <AddAlarm allAlarms={storeAlarms} setAlarmAdder={setStoreAlarms} {...props} />} />
         <Route exact path ='/setalarm' render={ props => <SetAlarm allAlarms={storeAlarms}  {...props}/>} />
-        <Route exact path='/Alarms'><AlarmPage/></Route>
-
-        <Route exact path='/Alarms'><AlarmPage alarmtime={alarmtime} snoozetime={snoozetime} offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
 
         <Route exact path='/Alarms'><AlarmPage alarmtime={alarmtime} snoozetime={snoozetime} offbtn={offbtn} setOffBtn={setOffBtn} snoozebtn={snoozebtn} setSnoozeBtn={setSnoozeBtn}/></Route>
         <Route exact path='/Nav'><Nav/></Route>

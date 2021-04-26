@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Nav from './Nav'
 import {
   makeStyles, Typography, AppBar, Toolbar, IconButton, Container, Link as MUiLink, TextField, 
   Select as MuiSelect, MenuItem, FormControlLabel, Checkbox
@@ -91,7 +92,7 @@ function AddAlarm(props) {
             <AppBar position="static" color="transparent" elevation={0}>
               <Toolbar>
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" >
-                  <MenuSharpIcon className={classes.svg_icons} />
+                < Nav/>
                 </IconButton>
                 <IconButton edge="start" className={classes.rightToolbar} color="inherit" aria-label="circle" type="submit">
                   <AddCircleIcon className={classes.svg_icons}/>

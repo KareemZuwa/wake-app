@@ -17,12 +17,13 @@
 }
 
 .landing-wrapper a {
+  align-self: center;
+  width: 200px;
   font-size: 40px;
   color: black;
   background: #fcb64e;
   text-decoration: none;
   padding: 1rem;
   border-radius: 50px;
-  margin: 4rem 3rem 0;
-  
+  margin: 4rem 0rem 0;
 }

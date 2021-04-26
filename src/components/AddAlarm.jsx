@@ -82,7 +82,7 @@ function AddAlarm({llAlarms, setAlarmAdder }) {
 
   return (
     <div>
-      <Container maxWidth="xs" style={{ backgroundColor: '#555AA3', borderRadius: 10 }}>
+      <Container maxWidth="xs" style={{ backgroundColor: '#555AA3', height: '100vh' }}>
         <form onSubmit={submitHandle} noValidate autoComplete="off">
           <header>
             <AppBar position="static" color="transparent" elevation={0}>

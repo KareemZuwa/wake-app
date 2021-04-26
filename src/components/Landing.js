@@ -11,6 +11,7 @@ function Landing() {
 
             <Link to='/addalarm'>Set alarm</Link>
         </section>
+        
     )
 }
 

@@ -49,37 +49,34 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function AddAlarm(props) {
+function AddAlarm({llAlarms, setAlarmAdder }) {
 
-  const { allAlarms, setAlarmAdder } = props;
-  let history = useHistory();
+    let history = useHistory();
 
-  const [time, setTime] = useState("00:00");
-  const [name, setName] = useState("");
-  const [sound, setSound] = useState("classicAlarmSound");
-  const [repeat, setRepeat] = useState(true);
-  const [snooze, setSnooze] = useState(true);
+    const [time, setTime] = useState("00:00");
+    const [name, setName] = useState("");
+    const [sound, setSound] = useState("classicAlarmSound");
+    const [repeat, setRepeat] = useState(true);
+    const [snooze, setSnooze] = useState(true);
 
-  const allAlarmSounds = [
-    {"sound" : "Classic", "soundAudio" : "classicAlarmSound"},
-    {"sound" : "Cute", "soundAudio" : "cuteAlarmSound"},
-    {"sound" : "Elevated ", "soundAudio" : "elevatedAlarmSound"},
-    {"sound" : "Extreme", "soundAudio" : "extremeAlarmSound"},
-    {"sound" : "Nature", "soundAudio" : "natureAlarmSound"},
-    {"sound" : "Wake-Up", "soundAudio" : "wakeupAlarmSound"}
-  ];
+    const allAlarmSounds = [
+      {"sound" : "Classic", "soundAudio" : "classicAlarmSound"},
+      {"sound" : "Cute", "soundAudio" : "cuteAlarmSound"},
+      {"sound" : "Elevated ", "soundAudio" : "elevatedAlarmSound"},
+      {"sound" : "Extreme", "soundAudio" : "extremeAlarmSound"},
+      {"sound" : "Nature", "soundAudio" : "natureAlarmSound"},
+      {"sound" : "Wake-Up", "soundAudio" : "wakeupAlarmSound"}
+    ];
 
-  const classes = useStyles();
+    const classes = useStyles();
 
-
- 
     const submitHandle = (e) => {
       e.preventDefault();
       
       const newAlarm = { time, name, sound, repeat, snooze };
 
       setAlarmAdder(prevAlarms => [...prevAlarms, newAlarm]);
-      //alert(`Alarm set to go off at ${time}`);
+      alert(`Alarm set to go off at ${time}`);
       history.push('/setalarm');
     }
 
@@ -178,4 +175,4 @@ function AddAlarm(props) {
   )
 }
 
-export default withRouter(AddAlarm)
+export default AddAlarm

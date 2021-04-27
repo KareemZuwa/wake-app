@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import AlarmPage from './components/AlarmPage'
 import AddAlarm from './components/AddAlarm';
 import SetAlarm from './components/SetAlarm';
+//import ClassicAlarm from './assets/sounds/ClassicAlarm.mp3'
 
 import Nav from './components/Nav'
 
@@ -21,8 +22,15 @@ function App() {
   const [alarmsound, setAlarmSound] = useState('');
   const [snoozetime, setSnoozeTime] = useState(5);
 
+  var dt = new Date();
+  dt.setMinutes(dt.getMinutes() + 1);
+  let hours = dt.getHours();
+  let minutes = ('0' + dt.getMinutes()).slice(-2);
+
+
+
   const [storeAlarms, setStoreAlarms] = useState([
-    { 'time' : '15:54', 'name':'', 'sound': 'classicAlarmSound', 'repeat':true, 'snooze': true}
+    //{ 'time' : `${hours}:${minutes}`, 'name':'', 'sound': ClassicAlarm, 'repeat':true, 'snooze': true}
   ]);
 
 

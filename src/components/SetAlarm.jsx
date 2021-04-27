@@ -1,21 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { makeStyles, Container, Card, CardContent, Button } from '@material-ui/core';
 import alarmIcon from '../assets/svg/alarm-icon.svg'
 import Switch from '@material-ui/core/Switch';
 
 
 import  Nav  from "./Nav";
-
-
-import ClassicAlarm from '../assets/sounds/ClassicAlarm.mp3'
-import CuteAlarm from '../assets/sounds/CuteAlarm.mp3'
-import ElevatedAlarm from '../assets/sounds/ElevatedAlarm.mp3'
-import ExtremeAlarm from '../assets/sounds/ExtremeAlarm.mp3'
-import NatureAlarm from '../assets/sounds/NatureAlarm.mp3'
-import WakeUp from '../assets/sounds/WakeUp.mp3'
 import { useHistory } from 'react-router-dom';
-
-import useSound from 'use-sound';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,19 +28,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SetAlarm({ allAlarms }) {
-    const classes = useStyles();
+    //const classes = useStyles();
     const history = useHistory();
     
     const hourHand = useRef(null);
     const minuteHand = useRef(null);
     const secondHand = useRef(null);
+    //const [payAlarm, setPlayAlarm] = useState(false);
 
-    const [classicAlarmSound] = useSound(ClassicAlarm, { volume: 0.25, soundEnabled : true})
-    const [cuteAlarmSound] = useSound(CuteAlarm, { volume: 0.25})
-    const [elevatedAlarmSound] = useSound(ElevatedAlarm, { volume: 0.25})
-    const [extremeAlarmSound] = useSound(ExtremeAlarm, { volume: 0.25})
-    const [natureAlarmSound] = useSound(NatureAlarm, { volume: 0.25})
-    const [wakeupAlarmSound] = useSound(WakeUp, { volume: 0.25})
 
     useEffect(() => {
 
@@ -81,11 +66,13 @@ function SetAlarm({ allAlarms }) {
 
             allAlarms.forEach(alarm => {
 
-                console.log((alarm.time + ':0' === `${hours}:${minutes}:${seconds}`))
-
                 if(alarm.time + ':0' === `${hours}:${minutes}:${seconds}`)
                 {
-                    classicAlarmSound();
+                    //setPlayAlarm(true);
+                    history.push({
+                        pathname: '/Alarms',
+                        alarmProps: { alarmtime : alarm.time, alarmSound : alarm.sound }
+                    });
                 }
             })
         }

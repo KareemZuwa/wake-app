@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
 import Nav from './Nav'
 import {
-  makeStyles, Typography, AppBar, Toolbar, IconButton, Container, Link as MUiLink, TextField, 
+  makeStyles, Typography, AppBar, Toolbar, IconButton, Container, TextField, 
   Select as MuiSelect, MenuItem, FormControlLabel, Checkbox
 } from '@material-ui/core';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import AddIcon from '../assets/svg/alarm-icon.svg'
 
-import { withRouter, useHistory } from 'react-router-dom';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import AddIcon from '../assets/svg/alarm-img.svg'
+
+import ClassicAlarm from '../assets/sounds/ClassicAlarm.mp3'
+import CuteAlarm from '../assets/sounds/CuteAlarm.mp3'
+import ElevatedAlarm from '../assets/sounds/ElevatedAlarm.mp3'
+import ExtremeAlarm from '../assets/sounds/ExtremeAlarm.mp3'
+import NatureAlarm from '../assets/sounds/NatureAlarm.mp3'
+import WakeUp from '../assets/sounds/WakeUp.mp3'
+
+
+import { useHistory } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,6 +33,11 @@ const useStyles = makeStyles((theme) => ({
   svg_icons:{
     transform : 'scale(1.8)',
     color: 'white'
+  },
+  clock_svg: {
+    transform : 'scale(2.0)',
+    paddingTop: 60,
+    paddingBottom:60
   },
   accordionRound : {
     marginBottom:10, 
@@ -60,12 +74,12 @@ function AddAlarm({llAlarms, setAlarmAdder }) {
     const [snooze, setSnooze] = useState(true);
 
     const allAlarmSounds = [
-      {"sound" : "Classic", "soundAudio" : "classicAlarmSound"},
-      {"sound" : "Cute", "soundAudio" : "cuteAlarmSound"},
-      {"sound" : "Elevated ", "soundAudio" : "elevatedAlarmSound"},
-      {"sound" : "Extreme", "soundAudio" : "extremeAlarmSound"},
-      {"sound" : "Nature", "soundAudio" : "natureAlarmSound"},
-      {"sound" : "Wake-Up", "soundAudio" : "wakeupAlarmSound"}
+      {"sound" : "Classic", "soundAudio" : ClassicAlarm},
+      {"sound" : "Cute", "soundAudio" : CuteAlarm},
+      {"sound" : "Elevated ", "soundAudio" : ElevatedAlarm},
+      {"sound" : "Extreme", "soundAudio" : ExtremeAlarm},
+      {"sound" : "Nature", "soundAudio" : NatureAlarm},
+      {"sound" : "Wake-Up", "soundAudio" : WakeUp}
     ];
 
     const classes = useStyles();
@@ -76,7 +90,6 @@ function AddAlarm({llAlarms, setAlarmAdder }) {
       const newAlarm = { time, name, sound, repeat, snooze };
 
       setAlarmAdder(prevAlarms => [...prevAlarms, newAlarm]);
-      alert(`Alarm set to go off at ${time}`);
       history.push('/setalarm');
     }
 
@@ -84,7 +97,7 @@ function AddAlarm({llAlarms, setAlarmAdder }) {
     <div>
       <Container maxWidth="xs" style={{ backgroundColor: '#555AA3', height: '100vh' }}>
         <form onSubmit={submitHandle} noValidate autoComplete="off">
-          <header>
+          <header style={{ paddingBottom:20}}>
             <AppBar position="static" color="transparent" elevation={0}>
               <Toolbar>
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" >
@@ -97,16 +110,11 @@ function AddAlarm({llAlarms, setAlarmAdder }) {
             </AppBar>
           </header>
 
-          <div style={{marginTop:40, marginBottom:40}}>
-            <img src={AddIcon} className={classes.svg_icons} alt="image"/>
-          </div>
-          <div style={{color:'black', marginBottom: 15, display: "flex", justifyContent:"flex-end"}}>
-            <MUiLink href="#" color="inherit" >
-              Change
-            </MUiLink>
+          <div>
+            <img src={AddIcon} className={classes.clock_svg} alt="AddIcon"/>
           </div>
 
-          <div style={{ paddingBottom: 10}}>
+          <div style={{ paddingTop:80, paddingRight:20}}>
 
             <div className={classes.innerDivs}>
               <FormControlLabel className={classes.root}

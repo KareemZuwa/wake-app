@@ -93,7 +93,7 @@ function SetAlarm({ allAlarms }) {
 
     return (
         <div>
-            <Container maxWidth="xs" style={{ backgroundColor:'#555AA3', height: '100vh'}}>
+            <Container maxWidth="xs" style={{ backgroundColor:'#555AA3', height: '100'}}>
                 <header>
                     {/*<AppBar position="static" color="transparent" elevation={0}>
                         <Toolbar>

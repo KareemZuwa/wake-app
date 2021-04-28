@@ -47,6 +47,8 @@ function SetAlarm({ allAlarms }) {
             const hours = currentDate.getHours();
             const minutes = currentDate.getMinutes();
             const seconds = currentDate.getSeconds();
+
+            let mins = ('0' + currentDate.getMinutes()).slice(-2)
     
              // rotating fraction --> how many fraction to rotate for each hand.
             const secondsFraction = seconds / 60;
@@ -65,10 +67,8 @@ function SetAlarm({ allAlarms }) {
             hourHand.current.style.transform = `rotate(${hoursRotate}deg)`;
 
             allAlarms.forEach(alarm => {
-
-                if(alarm.time + ':0' === `${hours}:${minutes}:${seconds}`)
+                if(alarm.time + ':0' === `${hours}:${mins}:${seconds}`)
                 {
-                    //setPlayAlarm(true);
                     history.push({
                         pathname: '/Alarms',
                         alarmProps: { alarmtime : alarm.time, alarmSound : alarm.sound }
